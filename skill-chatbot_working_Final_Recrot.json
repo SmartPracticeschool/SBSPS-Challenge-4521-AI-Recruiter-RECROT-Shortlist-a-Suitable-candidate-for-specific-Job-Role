@@ -1,0 +1,1858 @@
+{
+  "intents": [
+    {
+      "intent": "yes",
+      "examples": [
+        {
+          "text": "sure"
+        },
+        {
+          "text": "yes for sure"
+        },
+        {
+          "text": "yes it suits my profile"
+        },
+        {
+          "text": "definitely"
+        },
+        {
+          "text": "yeah sure"
+        },
+        {
+          "text": "yeah"
+        },
+        {
+          "text": "yes"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "email",
+      "examples": [
+        {
+          "text": "abc@gmail.com"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Enquiry",
+      "examples": [
+        {
+          "text": "What are the job requirements?"
+        },
+        {
+          "text": "What are the vacancies?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "number",
+      "examples": [],
+      "description": ""
+    },
+    {
+      "intent": "Apply",
+      "examples": [
+        {
+          "text": "I want to apply for the job vacancies"
+        },
+        {
+          "text": "Want to give an application for the listed job vacancies."
+        },
+        {
+          "text": "Can I apply for the jobs available here?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greetings",
+      "examples": [
+        {
+          "text": "gud mrng"
+        },
+        {
+          "text": "hey"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "RESTART"
+        },
+        {
+          "text": "restart again"
+        },
+        {
+          "text": "hey there"
+        },
+        {
+          "text": "hi there"
+        },
+        {
+          "text": "hello there"
+        },
+        {
+          "text": "hi"
+        },
+        {
+          "text": "good evening"
+        },
+        {
+          "text": "good afternoon"
+        },
+        {
+          "text": "good morning"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "no",
+      "examples": [
+        {
+          "text": "go to hell"
+        },
+        {
+          "text": "sorry"
+        },
+        {
+          "text": "sadly it does not fit me"
+        },
+        {
+          "text": "nope"
+        },
+        {
+          "text": "sorry it does not suits me"
+        },
+        {
+          "text": "no"
+        },
+        {
+          "text": "nahh"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "no",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "No",
+          "synonyms": [
+            "no",
+            "nope",
+            "sorry",
+            "sadly no",
+            "nahh",
+            "nahi"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Job_Details",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Web Developer",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "App Developer",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Web Backend Developer",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "App Backend developer",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Enquiry",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "requirements",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "vacancies",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Greetings",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Good evening",
+          "synonyms": [
+            "gd eve",
+            "gud eveng",
+            "gud eve"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good morning",
+          "synonyms": [
+            "gm",
+            "gud mrng",
+            "morning",
+            "gd mrng"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good afternoon",
+          "synonyms": [
+            "gd aftrnn",
+            "gud afternun",
+            "ga"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "yes",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Yes",
+          "synonyms": [
+            "yes",
+            "yeah",
+            "sure",
+            "for sure",
+            "cool"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    },
+    "from-sample": true
+  },
+  "webhooks": [
+    {
+      "url": "https://eu-gb.functions.cloud.ibm.com/api/v1/web/prateekc231%40gmail.com_dev/default/starting.json",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "collect yes",
+      "parent": "node_2_1593621740030",
+      "context": {
+        "know_yes": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_5_1593787134339"
+      },
+      "conditions": "true",
+      "dialog_node": "node_7_1593864899108"
+    },
+    {
+      "type": "standard",
+      "title": "q3_1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "1. Var"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1593872259311",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_7_1593872336767"
+    },
+    {
+      "type": "standard",
+      "title": "q3_4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "4. None of the above"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593872432995",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_6_1593881173270"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1593872484523"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "Instructions",
+            "source": "https://pbs.twimg.com/media/EcGbU71UcAAC5OA?format=jpg&name=large",
+            "description": "These are the instructions.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_6_1593868918123",
+      "conditions": "true",
+      "dialog_node": "response_3_1593870280230"
+    },
+    {
+      "type": "standard",
+      "title": "q2_2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "2. JavaScript can manipulate HTML elements"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1593872074260",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_6_1593872115804"
+    },
+    {
+      "type": "standard",
+      "title": "resume thanks -NO",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thanks a lot!! 😃 By the way, how did you get to know about us?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1593785795863",
+      "context": {
+        "know_no": ""
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_6_1593864707180"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1593785795879"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "That's Great!!✌✌ So please provide the Google Drive Link of your Resume/CV."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1593617471793",
+      "conditions": "@yes",
+      "dialog_node": "response_2_1593617532282",
+      "previous_sibling": "node_2_1593621740030"
+    },
+    {
+      "type": "standard",
+      "title": "resume thanks",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thanks a lot!! 😃 By the way, how did you get to know about us?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1593617471793",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_7_1593864899108"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1593621740030",
+      "previous_sibling": "node_2_1593866708203"
+    },
+    {
+      "type": "standard",
+      "title": "question round",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Now you will be redirected to the Questionnaire Round for the specific job role. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1593617471793",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_8_1593866520725"
+      },
+      "conditions": "true",
+      "dialog_node": "node_5_1593787134339",
+      "previous_sibling": "node_8_1593618521867"
+    },
+    {
+      "type": "standard",
+      "title": "instruction",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The Questionnaire consists of 5 questions with 4 options each. You have to write the correct option number as the answer. Here is an example to show the correct way of answering."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1593617471793",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_6_1593868918123"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1593866708203",
+      "previous_sibling": "node_5_1593787134339"
+    },
+    {
+      "type": "standard",
+      "title": "Collect Resume link",
+      "parent": "node_10_1593617471793",
+      "context": {
+        "resume": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_2_1593621740030"
+      },
+      "conditions": "true",
+      "dialog_node": "node_8_1593618521867"
+    },
+    {
+      "type": "standard",
+      "title": "q1_3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "3. animation"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1593871864674",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_4_1593871955376"
+      },
+      "conditions": "true",
+      "dialog_node": "node_4_1593871909765"
+    },
+    {
+      "type": "standard",
+      "title": "q3_3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "3. String"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1593872401698",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1593872432995"
+    },
+    {
+      "type": "standard",
+      "title": "ans2",
+      "parent": "node_3_1593872221969",
+      "context": {
+        "answer1": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_10_1593872259311"
+      },
+      "conditions": "true",
+      "dialog_node": "node_1_1593880869791"
+    },
+    {
+      "type": "standard",
+      "title": "q4_4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "4. It is used to structure documents"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1593879161802",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_10_1593881531667"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1593879205598"
+    },
+    {
+      "type": "standard",
+      "title": "q5_4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "4. .btn-info"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593879455950",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_6_1593881607427"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1593879505900"
+    },
+    {
+      "type": "standard",
+      "title": "ans5",
+      "parent": "node_2_1593879505900",
+      "context": {
+        "answer4": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_5_1593884100685"
+      },
+      "conditions": "true",
+      "dialog_node": "node_6_1593881607427"
+    },
+    {
+      "type": "standard",
+      "title": "final goodbye",
+      "parent": "node_8_1593884582815",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "a1": "$answer1",
+            "a2": "$answer2",
+            "a3": "$answer3",
+            "a4": "$answer4",
+            "a5": "$answer5",
+            "mno": "$mno",
+            "name": "$name",
+            "email": "$email",
+            "resume": "$resume"
+          },
+          "result_variable": "webhook_result_1"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_5_1594658337830"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1593884980493",
+      "previous_sibling": "node_5_1593884848979"
+    },
+    {
+      "type": "standard",
+      "title": "yes_exit",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Team RECROT wishes you all the best for your future.🤩 You can close the tab without giving any further input. Thank You!!😁"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1593884582815",
+      "conditions": "true",
+      "dialog_node": "node_5_1594658337830",
+      "previous_sibling": "node_2_1593884980493"
+    },
+    {
+      "type": "standard",
+      "title": "collect rating",
+      "parent": "node_8_1593884582815",
+      "context": {
+        "rating": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_2_1593884980493"
+      },
+      "conditions": "true",
+      "dialog_node": "node_5_1593884848979"
+    },
+    {
+      "type": "standard",
+      "title": "ans1",
+      "parent": "node_4_1593871955376",
+      "context": {
+        "useless_variable": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_2_1593872027389"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1593880738135"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1593967962221",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1593967962292",
+      "previous_sibling": "handler_2_1593967962292"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_8_1593967962221",
+      "event_name": "input",
+      "dialog_node": "handler_2_1593967962292"
+    },
+    {
+      "type": "standard",
+      "title": "q1_1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "1. Slideshow"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1593871495706",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_8_1593871864674"
+      },
+      "conditions": "true",
+      "dialog_node": "node_6_1593871807569"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "It's okay. By the way you can still send us your Google Drive Link of your Resume for any future connections.😊"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1593783479466",
+      "context": {
+        "no": ""
+      },
+      "conditions": "@no",
+      "dialog_node": "response_5_1593783567921",
+      "previous_sibling": "node_1_1593785795863"
+    },
+    {
+      "type": "standard",
+      "title": "Collect Resume link - NO",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1593783479466",
+      "context": {
+        "resume_link": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_2_1593785795879"
+      },
+      "conditions": "true",
+      "dialog_node": "node_1_1593785795863"
+    },
+    {
+      "type": "standard",
+      "title": "q5_1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "1. .btn-warning"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1593879242652",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_5_1593879351612"
+    },
+    {
+      "type": "standard",
+      "title": "ask name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What should I call you? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_4_1592998726055"
+      },
+      "dialog_node": "node_8_1593615602326",
+      "previous_sibling": "node_7_1593615474088"
+    },
+    {
+      "type": "standard",
+      "title": "thnx for intrest",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thanks for your interest here. Looks like you are exploring new job opportunities 🙋"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1593615602326"
+      },
+      "dialog_node": "node_7_1593615474088"
+    },
+    {
+      "type": "standard",
+      "title": "image instruction",
+      "parent": "node_8_1593866520725",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_9_1593871495706"
+      },
+      "conditions": "true",
+      "dialog_node": "node_6_1593868918123"
+    },
+    {
+      "type": "standard",
+      "title": "q4_3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "3. It is a partial programming language"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1593879033900",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_7_1593879161802"
+    },
+    {
+      "type": "standard",
+      "title": "End conv",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "It was good to have you with us."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593785795879",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_9_1593785516962",
+      "previous_sibling": "node_6_1593864707180"
+    },
+    {
+      "type": "standard",
+      "title": "collect no ",
+      "parent": "node_2_1593785795879",
+      "context": {
+        "know_no": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_9_1593785516962"
+      },
+      "conditions": "true",
+      "dialog_node": "node_6_1593864707180"
+    },
+    {
+      "type": "standard",
+      "title": "Collect Mobile No.",
+      "parent": "node_3_1592998357469",
+      "context": {
+        "mno": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_1_1593525811281"
+      },
+      "conditions": "true",
+      "dialog_node": "node_7_1593620954911"
+    },
+    {
+      "type": "standard",
+      "title": "q5_2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "2. .btn-danger"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1593879351612",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1593879401666"
+    },
+    {
+      "type": "standard",
+      "title": "exit thanks",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thanks for giving your precious time 😇 You will receive an Email regarding further updates, $name"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1593881607427",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_8_1593884582815"
+      },
+      "conditions": "true",
+      "dialog_node": "node_1_1593881650018",
+      "previous_sibling": "node_5_1593884100685"
+    },
+    {
+      "type": "standard",
+      "title": "rating",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "How was your Experience with RECROT?😄 On a scale of 1-5, please rate us:😍"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1593881607427",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_5_1593884848979"
+      },
+      "conditions": "true",
+      "dialog_node": "node_8_1593884582815",
+      "previous_sibling": "node_1_1593881650018"
+    },
+    {
+      "type": "standard",
+      "title": "ans5_again",
+      "parent": "node_6_1593881607427",
+      "context": {
+        "answer5": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_1_1593881650018"
+      },
+      "conditions": "true",
+      "dialog_node": "node_5_1593884100685"
+    },
+    {
+      "type": "standard",
+      "title": "q4_2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "2. It is a scripting language"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1593878994448",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_1_1593879033900"
+    },
+    {
+      "type": "standard",
+      "title": "ques4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ques 4. Which of the following options is correct with regard to HTML?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593866708203",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_3_1593878946807",
+      "previous_sibling": "node_10_1593872259311"
+    },
+    {
+      "type": "standard",
+      "title": "ques2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ques 2 Which of the following JavaScript cannot do?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593866708203",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1593872027389",
+      "previous_sibling": "node_9_1593871495706"
+    },
+    {
+      "type": "standard",
+      "title": "ques5",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ques 5 Which of the following bootstrap style of button deemphasize a button by making it look like a link while maintaining button behavior?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593866708203",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_3_1593879242652",
+      "previous_sibling": "node_3_1593878946807"
+    },
+    {
+      "type": "standard",
+      "title": "ques3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ques 3.  _________ keyword is used to declare variables in javascript."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593866708203",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1593872259311",
+      "previous_sibling": "node_2_1593872027389"
+    },
+    {
+      "type": "standard",
+      "title": "ques1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ques 1 Glyphicons is mainly used for?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593866708203",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_6_1593871807569"
+      },
+      "conditions": "true",
+      "dialog_node": "node_9_1593871495706"
+    },
+    {
+      "type": "standard",
+      "title": "ans4",
+      "parent": "node_10_1593879205598",
+      "context": {
+        "answer3": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_3_1593879242652"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1593881531667"
+    },
+    {
+      "type": "standard",
+      "title": "q3_2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "2. Dim"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1593872336767",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_5_1593872401698"
+    },
+    {
+      "type": "standard",
+      "title": "get ready",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Be prepared!!😎  The instructions for the Questionnaire are given below:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1593618521867",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_2_1593866708203"
+      },
+      "conditions": "true",
+      "dialog_node": "node_8_1593866520725"
+    },
+    {
+      "type": "standard",
+      "title": "q1_4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "4. providing different icons"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1593871909765",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_10_1593880738135"
+      },
+      "conditions": "true",
+      "dialog_node": "node_4_1593871955376"
+    },
+    {
+      "type": "standard",
+      "title": "q4_1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "1. It is a modelling language"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1593878946807",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_9_1593878994448"
+    },
+    {
+      "type": "standard",
+      "title": "ans3",
+      "parent": "node_10_1593872484523",
+      "context": {
+        "answer2": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_3_1593878946807"
+      },
+      "conditions": "true",
+      "dialog_node": "node_6_1593881173270"
+    },
+    {
+      "type": "standard",
+      "title": "q1_2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "2. graphic images"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1593871807569",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_4_1593871909765"
+      },
+      "conditions": "true",
+      "dialog_node": "node_8_1593871864674"
+    },
+    {
+      "type": "standard",
+      "title": "No",
+      "parent": "node_10_1593617096222",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1593785795863"
+      },
+      "conditions": "#no || @no",
+      "dialog_node": "node_6_1593783479466",
+      "previous_sibling": "node_10_1593617471793"
+    },
+    {
+      "type": "standard",
+      "title": "Yes",
+      "parent": "node_10_1593617096222",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_8_1593618521867"
+      },
+      "conditions": "#yes || @yes",
+      "dialog_node": "node_10_1593617471793"
+    },
+    {
+      "type": "standard",
+      "title": "q2_1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "1. JavaScript can react to events"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593872027389",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_8_1593872074260"
+    },
+    {
+      "type": "standard",
+      "title": "q2_4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "4. All of the Above"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593872154958",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_1_1593880869791"
+      },
+      "conditions": "true",
+      "dialog_node": "node_3_1593872221969"
+    },
+    {
+      "type": "standard",
+      "title": "q2_3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "3. JavaScript can be use to validate data"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1593872115804",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1593872154958"
+    },
+    {
+      "type": "standard",
+      "title": "Collect Email",
+      "parent": "node_2_1592998322649",
+      "context": {
+        "email": "<? input.text.substring(0) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_3_1592998357469"
+      },
+      "conditions": "true",
+      "dialog_node": "node_6_1593620809035"
+    },
+    {
+      "type": "slot",
+      "parent": "node_2_1593884980493",
+      "dialog_node": "slot_8_1593967962221",
+      "previous_sibling": "response_6_1594039629284"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank You $name , If selected, We will contact you Soon."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1593884980493",
+      "conditions": "$name",
+      "dialog_node": "response_6_1594039629284"
+    },
+    {
+      "type": "standard",
+      "title": "yes _after_exit",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "RECROT wishes you all the best for your future. 🤩  For closing the session close the tab and for restarting the session type \"RESTART\"."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1594658337830",
+      "conditions": "true",
+      "dialog_node": "node_3_1594658540560"
+    },
+    {
+      "type": "standard",
+      "title": "no_after_exit",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "RECROT wishes you all the best for your future. 🤩  For closing the session close the tab and for restarting the session type \"RESTART\"."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1593785516962",
+      "conditions": "true",
+      "dialog_node": "node_7_1594656814165",
+      "previous_sibling": "node_9_1593864307276"
+    },
+    {
+      "type": "standard",
+      "title": "exit",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Team RECROT wishes you all the best for your future.🤩 You can close the tab without giving any further input. Thank You!!😁"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1593785516962",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_7_1594656814165"
+      },
+      "conditions": "true",
+      "dialog_node": "node_9_1593864307276"
+    },
+    {
+      "type": "standard",
+      "title": "q5_3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "3. .btn-link"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1593879401666",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1593879455950"
+    },
+    {
+      "type": "standard",
+      "title": "Job Profile",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Congratulations 🤩!!Our firm has an opening for Web Development job profile. 😃 Are you interested in it?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_10_1593617096222"
+      },
+      "conditions": "true",
+      "dialog_node": "node_7_1593002642954",
+      "previous_sibling": "node_1_1593525811281"
+    },
+    {
+      "type": "standard",
+      "title": "Collect Name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great to have you with us, $name!!😎 "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "name": "<? input.text.substring(0, 1).toUpperCase() + input.text.substring(1) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_2_1592998322649"
+      },
+      "conditions": "true",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1592998726055",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Detail_thanq",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thankyou for providing up your details."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_7_1593002642954"
+      },
+      "conditions": "true",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1593525811281",
+      "previous_sibling": "node_3_1592998357469"
+    },
+    {
+      "type": "standard",
+      "title": "E-mail",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please Enter Valid E-mail ID."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_6_1593620809035"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1592998322649",
+      "previous_sibling": "node_4_1592998726055"
+    },
+    {
+      "type": "standard",
+      "title": "Satisfied",
+      "output": {
+        "generic": [
+          {
+            "title": "Choose from the following (YES/NO)",
+            "options": [
+              {
+                "label": "YES",
+                "value": {
+                  "input": {
+                    "text": "yes"
+                  }
+                }
+              },
+              {
+                "label": "NO",
+                "value": {
+                  "input": {
+                    "text": "no"
+                  },
+                  "intents": [
+                    {
+                      "intent": "exit_app",
+                      "confidence": 1
+                    }
+                  ]
+                }
+              }
+            ],
+            "preference": "button",
+            "response_type": "option"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_10_1593617471793"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1593617096222",
+      "previous_sibling": "node_7_1593002642954"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_10_1593617096222",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Mobile No.",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please Enter Valid Mobile No."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_7_1593620954911"
+      },
+      "conditions": "true",
+      "dialog_node": "node_3_1592998357469",
+      "previous_sibling": "node_2_1592998322649"
+    },
+    {
+      "type": "standard",
+      "title": "Hey_recrot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey there !! RECROT here!👋 "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_7_1593615474088"
+      },
+      "conditions": "true",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": false
+  },
+  "learning_opt_out": false,
+  "name": "chatbot_working",
+  "language": "en",
+  "description": "The testing bot"
+}
